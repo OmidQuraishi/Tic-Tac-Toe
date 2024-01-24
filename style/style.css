@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+.game {
+  background-color: gray;
+}
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.box {
+  background-color: white;
+  width: 130px;
+  height: 130px;
+  font-size: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overly {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: #000000af;
+  backdrop-filter: blur(4px);
+}
+.box.circle {
+  color: #0c0c54;
+}
+.box.xmark {
+  color: #00ffff;
+}
+.hidden {
+  display: none;
+}
