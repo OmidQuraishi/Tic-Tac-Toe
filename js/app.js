@@ -2,6 +2,8 @@
 const boxes = document.querySelectorAll(".box");
 const a = [...boxes];
 const overly = document.querySelector(".overly");
+const winnerEl = document.querySelector(".winner");
+const newGame = document.querySelector(".winner button");
 let playerTurn = 0;
 const winPattern = [
   [0, 1, 2],
@@ -22,6 +24,8 @@ const winner = () => {
     if (cell1 !== "" && cell2 !== "" && cell3 !== "") {
       if (cell1 == cell2 && cell2 == cell3) {
         overly.classList.remove("hidden");
+        winnerEl.classList.remove("hidden");
+        document.querySelector(".winner h1").textContent = `Winner ${cell1}`;
       }
     }
   }
@@ -43,6 +47,21 @@ boxes.forEach((box) => {
     winner();
     if (a.every((ele) => ele.textContent !== "")) {
       overly.classList.remove("hidden");
+      winnerEl.classList.remove("hidden");
+      document.querySelector(".winner h1").textContent = "Draw";
     }
   });
 });
+
+const palyNewGame = function () {
+  boxes.forEach((box) => {
+    box.textContent = "";
+    box.classList.remove("xmark");
+    box.classList.remove("circle");
+  });
+  overly.classList.add("hidden");
+  winnerEl.classList.add("hidden");
+  playerTurn = 0;
+};
+
+newGame.addEventListener("click", palyNewGame);

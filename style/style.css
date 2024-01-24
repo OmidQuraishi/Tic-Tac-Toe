@@ -50,3 +50,38 @@ body {
 .hidden {
   display: none;
 }
+.winner.hidden {
+  display: none;
+}
+
+.winner {
+  position: absolute;
+  background-color: #1ee0dd;
+  width: 400px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.winner h1 {
+  font-size: 40px;
+  font-family: sans-serif;
+  color: white;
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+.winner h1 .winnerName {
+  font-size: 50px;
+}
+.winner button {
+  padding: 10px;
+  color: white;
+  background-color: #0cce77;
+  border: none;
+  border-radius: 5px;
+}
